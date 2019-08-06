@@ -1,0 +1,22 @@
+body {
+
+font-family: 'Raleway', sans-serif;
+}
+
+img {
+  width: 30%;
+
+}
+
+.surround {
+  border: 1px solid black;
+  width: 30%;
+
+}
+
+.box {
+  border-radius: 4px;
+  background-color: #f0f7fb;
+  padding: 15px, 15px;
+  line-height: 50px;
+}

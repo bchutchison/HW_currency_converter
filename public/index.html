@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Currency Converter</title>
-    <script src="./js/bundle.js"></script>
-<link rel="stylesheet" href="./css/main.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Currency Converter</title>
+  <script src="./js/bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
 
-    <h1>Currency Converter</h1>
+  <h1>Currency Converter</h1>
 
-    <div id="app">
+  <div id="app">
 
-      <label for="currency_select">Select Currency</label>
-      <select id="currency_select">
-        <option v-for="(value, name) in currenciesArray">{{name}}</option>
-      </select>
+    <form v-on:submit.prevent="changeCurrency">
+      <label for="euros">Exchange amount :</label>
+      <input type="number" v-model.number="newExchangeAmount">
+    </form>
 
+    <br>
 
+    <label for="currency_select">Select Currency :</label>
+    <select id="currency_select" v-model.number="selectedCurrencyRate">
+      <option disabled value="">Select a currency</option>
+      <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
+    </select>
 
+<br>
 
+<div class="box">
+  <h2>Euros to selected currency : {{changeCurrencyEuros.toFixed(2)}}</h2>
+</div>
 
+<div class="box">
+  <h2>Selected currency to Euros : {{changeCurrencySelected.toFixed(2)}}</h2>
+</div>
 
+  </div>
 
-
-
-    </div>
-
-  </body>
+</body>
 </html>
