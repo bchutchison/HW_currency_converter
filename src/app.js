@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     data: {
       currenciesArray: [],
       newExchangeAmount: null,
-      selectedCurrencyRate: null
+      newExchangeAmountOne: null,
+      newExchangeAmountTwo: null,
+      selectedCurrencyRate: null,
+      selectedCurrencyRateOne: null,
+      selectedCurrencyRateTwo: null
     },
 
     mounted(){
@@ -19,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       changeCurrencySelected: function() {
         return this.newExchangeAmount / this.selectedCurrencyRate
+      },
+      changeCurrencyOne: function() {
+        return this.selectedCurrencyRateOne * this.selectedCurrencyRateTwo * this.newExchangeAmountOne
+      },
+      changeCurrencyTwo: function() {
+        return this.selectedCurrencyRateOne / this.selectedCurrencyRateTwo * this.newExchangeAmountTwo
       }
 
     },

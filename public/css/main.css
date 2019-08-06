@@ -20,3 +20,8 @@ img {
   padding: 15px, 15px;
   line-height: 50px;
 }
+
+label {
+  padding: 0px, 20px;
+  line-height: 50px;
+}

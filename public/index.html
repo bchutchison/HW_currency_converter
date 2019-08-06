@@ -13,10 +13,8 @@
 
   <div id="app">
 
-    <form v-on:submit.prevent="changeCurrency">
-      <label for="euros">Exchange amount :</label>
-      <input type="number" v-model.number="newExchangeAmount">
-    </form>
+    <label for="euros">Exchange amount :</label>
+    <input type="number" v-model.number="newExchangeAmount">
 
     <br>
 
@@ -26,17 +24,59 @@
       <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
     </select>
 
+    <br>
+
+    <div class="box">
+      <h2>Euros to selected currency : {{changeCurrencyEuros.toFixed(2)}}</h2>
+    </div>
+
+    <div class="box">
+      <h2>Selected currency to Euros : {{changeCurrencySelected.toFixed(2)}}</h2>
+    </div>
+
+<hr>
+
+<span>
+<label for="currency_one"></label>
+<input type="number" v-model.number="newExchangeAmountOne">
+</span>
+<span>
+<label for="currency_select_one">of Currency One :</label>
+<select id="currency_select_one" v-model.number="selectedCurrencyRateOne">
+  <option disabled value="">Select a currency</option>
+  <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
+</select>
+</span>
+<span>
+<h3>is equal to {{changeCurrencyOne.toFixed(2)}} of currency two</h3>
+</span>
+
+<br></br>
+
+<span>
+  <label for="currency_one"></label>
+<input type="number" v-model.number="newExchangeAmountTwo">
+</span>
+<span>
+<label for="currency_select_two">of Currency Two :</label>
+<select id="currency_select_two" v-model.number="selectedCurrencyRateTwo">
+  <option disabled value="">Select a currency</option>
+  <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
+</select>
+</span>
+<span>
+<h3>is equal to {{changeCurrencyTwo.toFixed(2)}} of currency one</h3>
+</span>
+
 <br>
 
-<div class="box">
-  <h2>Euros to selected currency : {{changeCurrencyEuros.toFixed(2)}}</h2>
-</div>
 
-<div class="box">
-  <h2>Selected currency to Euros : {{changeCurrencySelected.toFixed(2)}}</h2>
-</div>
+
+
+
+<hr>
+
 
   </div>
-
 </body>
 </html>
