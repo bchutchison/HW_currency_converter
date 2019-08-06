@@ -12,7 +12,10 @@
 
     <div id="app">
 
-
+      <label for="currency_select">Select Currency</label>
+      <select id="currency_select">
+        <option v-for="(value, name) in currenciesArray">{{name}}</option>
+      </select>
 
 
 
