@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return this.newExchangeAmount / this.selectedCurrencyRate
       },
       changeCurrencyOne: function() {
-        return this.selectedCurrencyRateOne * this.selectedCurrencyRateTwo * this.newExchangeAmountOne
+        return this.selectedCurrencyRateTwo / this.selectedCurrencyRateOne * this.newExchangeAmountOne
       },
       changeCurrencyTwo: function() {
-        return this.selectedCurrencyRateOne / this.selectedCurrencyRateTwo * this.newExchangeAmountTwo
+        return this.selectedCurrencyRateOne / this.selectedCurrencyRateTwo * this.newExchangeAmountOne 
       }
 
     },
