@@ -41,36 +41,37 @@
 <input type="number" v-model.number="newExchangeAmountOne">
 </span>
 <span>
-<label for="currency_select_one">of Currency One :</label>
+<label for="currency_select_one">Currency One :</label>
 <select id="currency_select_one" v-model.number="selectedCurrencyRateOne">
   <option disabled value="">Select a currency</option>
   <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
 </select>
 </span>
 <span>
-  <div class="box">
-    <h3>is equal to {{changeCurrencyOne.toFixed(2)}} of currency two</h3>
-  </div>
-</span>
-
-<br></br>
-
-<span>
-  <label for="currency_one"></label>
-<input type="number" v-model.number="newExchangeAmountTwo">
-</span>
-<span>
-<label for="currency_select_two">of Currency Two :</label>
+<label for="currency_select_two">Currency Two :</label>
 <select id="currency_select_two" v-model.number="selectedCurrencyRateTwo">
   <option disabled value="">Select a currency</option>
   <option v-for="(value, name) in currenciesArray" :value="value">{{name}}</option>
 </select>
 </span>
-<span>
+
+
+
   <div class="box">
-    <h3>is equal to {{changeCurrencyTwo.toFixed(2)}} of currency one</h3>
+    <h3>{{newExchangeAmountOne}} of currency one is equal to {{changeCurrencyOne.toFixed(2)}} of currency two</h3>
   </div>
-</span>
+
+  <div class="box">
+    <h3>{{newExchangeAmountOne}} of currency two is equal to {{changeCurrencyTwo.toFixed(2)}} of currency one</h3>
+  </div>
+
+<br></br>
+
+<!-- <span>
+  <label for="currency_one"></label>
+<input type="number" v-model.number="newExchangeAmountTwo">
+</span> -->
+
 
 <br>
 
